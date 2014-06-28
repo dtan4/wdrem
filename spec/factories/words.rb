@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :word do
-    word "MyString"
-    meaning "MyString"
+    sequence(:word) { |i| "word#{i}" }
+    sequence(:meaning) { |i| "meaning#{i}" }
   end
 end

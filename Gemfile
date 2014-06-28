@@ -17,6 +17,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'shoulda-matchers', require: false
   gem 'spring-commands-rspec'
 end
 
