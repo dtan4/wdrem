@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @words = Word.all
+    @words = Word.order("created_at DESC").first(10)
   end
 end
