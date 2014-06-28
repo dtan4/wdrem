@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require rails-timeago
 //= require bootstrap-sprockets
 //= require_tree .
