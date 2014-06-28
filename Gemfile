@@ -14,6 +14,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
 
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'spring-commands-rspec'
+end
+
 group :development do
   gem 'pry-rails'
   gem 'spring'
