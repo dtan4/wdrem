@@ -3,8 +3,7 @@ class WordsController < ApplicationController
     word = Word.new(word_params)
 
     if word.save
-      flash[:notice] = "保存しました: #{word.word}"
-      head 201
+      render json: word, status: 201
     else
       render json: { errors: word.errors.full_messages }, status: 422
     end

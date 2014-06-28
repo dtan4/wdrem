@@ -1,2 +1,31 @@
 .page-header
   h1 Wdrem
+
+.text-center
+  = form_tag(Word.new, remote: true, method: "POST", class: "form-inline", id: "wordNewForm", role: "form") do |f|
+    .form-group
+      label.sr-only for="wordInput" Word
+      = text_field_tag :word, "", class: "form-control input-lg", id: "wordInput", placeholder: "単語", maxlength: 50, size: 10
+    span.padding
+    .form-group.form-group-lg
+      label.sr-only for="meaningInput" Word
+      = text_field_tag :meaning, "", class: "form-control input-lg", id: "meaningInput", placeholder: "意味", maxlength: 140, size: 50
+    span.padding
+    .form-group.form-group-lg
+      = submit_tag "投稿", class: "btn btn-primary btn-lg", data: { disable_with: "投稿中…" }
+
+table.table.table-striped
+  thead
+    tr
+      th 単語
+      th 意味
+      th 投稿日時
+  tbody#tableBody
+    - @words.each do |word|
+      tr
+        td
+          = word.word
+        td
+          = word.meaning
+        td
+          = word.created_at

@@ -1,3 +1,21 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+clearForm = ->
+  $('#wordInput').val('')
+  $('#meaningInput').val('')
+
+escape = (text) ->
+  $('<div>').text(text).html()
+
+$(document).on('ajax:success', (event, word) ->
+  $('#tableBody').append(
+    "<tr>" +
+    "<td>#{escape(word.word)}</td>" +
+    "<td>#{escape(word.meaning)}</td>" +
+    "<td>#{escape(word.created_at)}</td>" +
+    "</tr>"
+  )
+  clearForm()
+).on('ajax:error', (event, errors) ->
+  console.log event
+  console.log JSON.parse(errors.responseText)
+  clearForm()
+)
