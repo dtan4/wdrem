@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe WordController do
+describe WordsController do
   describe "GET #show" do
     it "should render the :show template" do
       word = create(:word)

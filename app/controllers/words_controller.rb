@@ -1,4 +1,4 @@
-class WordController < ApplicationController
+class WordsController < ApplicationController
   def create
     word = Word.new(word_params)
 
