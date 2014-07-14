@@ -27,7 +27,7 @@ group :development do
   gem 'pry-rails'
   gem 'spring'
   gem 'sqlite3'
-  gem 'terminal-notifier-guard' if /darwin/ =~ RUBY_PLATFORM
+  gem 'terminal-notifier-guard'
 end
 
 group :production do
